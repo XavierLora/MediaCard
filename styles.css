@@ -1,0 +1,125 @@
+:root{
+    --navblue:#264b5d; 
+    --white: #FFFFFF;
+    --black: #000000;
+    --grey: #B2BEB5;
+    --bblue: #45b3e7;
+    --text-shadow: 0px 1.5px 0px rgba(0,0,0,0.1),
+    0px 3.5px 2.5px rgba(0,0,0,0.15),
+    0px 6px 1px rgba(0,0,0,0.1),
+    0px 8.5px 7.5px rgba(0,0,0,0.1);
+}
+html { height: 100% }
+body{
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    min-height: 100%;
+    font-family: 'Agdasima', sans-serif;
+    overflow-x: hidden;
+    color: var(--white);
+}
+div{
+    overflow: hidden;
+    white-space: nowrap;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+.navbarContainer{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 15vh;
+    justify-content: flex-start;
+    gap: 2vh;
+    align-items: center;
+    z-index: 1;
+}
+#navbarLogo{
+    -webkit-mask-image: linear-gradient(to bottom,var(--black) 10%,transparent 90%);
+    mask-image: linear-gradient(to bottom,var(--black) 10%,transparent 90%);
+    filter: invert(100%);
+}
+#navLogo{
+    width: 125px;
+    height: 125px;
+}
+.navText{
+    font-size: 4rem;
+    transition: color 1.25s;
+}
+#navTextContainer{
+    display: inherit;
+    gap: 1.5vh;
+}
+.pageWrapper{
+    position: absolute;
+    top: 0;
+    left:0;
+    background-position: 50%;
+    background-size: cover;
+    min-height: 100%;
+    max-height: 99vh;
+    width: 100%;
+    z-index: 0;
+}
+#backgroundPhoto{
+    background-image: url("https://demos.creative-tim.com/paper-kit-2-pro/assets/img/sections/pk-pro-cover.jpg");
+}
+.navText:hover{
+    text-decoration: underline;
+    color: var(--navblue);
+}
+.pageBody{
+    position: relative;
+    top: 10vh;
+    width: 100%;
+    display: flex; 
+    justify-content: center;
+    height: 90vh;
+}
+.cardRatio{
+    width: 50%;
+}
+.card{
+    aspect-ratio: 16/9;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    font-size: 2rem;
+    overflow: hidden;
+    position: relative;
+    top: 10vh;
+}
+.cardTextContainer{
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
+    content: '';
+    height: 0%;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 3;
+}  
+.img{
+    position: inherit;
+    z-index: 2;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    width:100%;
+    height: 10vh;
+}
+#copyRight{
+    text-align: center;
+    font-size: 2rem;
+    color: var(--grey);
+}
+
+.cardTextContainer:hover{
+    max-height:33%;
+    transition: max-height 0.25s ease-in;
+}
