@@ -87,25 +87,33 @@ a{
     aspect-ratio: 16/9;
     border: 1px solid #fff;
     border-radius: 15px;
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
-    font-size: 2rem;
+    box-shadow: 30px 30px 10px 0px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     position: relative;
     top: 10vh;
 }
 .cardTextContainer{
     background-color: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
-    content: '';
     height: 0%;
     position: absolute;
     width: 100%;
     bottom: 0;
     z-index: 3;
 }  
-.img{
+iframe{
     position: inherit;
     z-index: 2;
+    border-radius: 15px;
+    border: none; 
+    margin: 0; 
+    padding: 0;
+    -ms-zoom: 1.25;
+    -moz-transform: scale(1.25);
+    -moz-transform-origin: center 0%;
+    -o-transform: scale(1.25);
+    -o-transform-origin: center 0%;
+    -webkit-transform: scale(1.25);
+    -webkit-transform-origin: center 0%;
 }
 footer{
     position: fixed;
@@ -120,6 +128,6 @@ footer{
 }
 
 .cardTextContainer:hover{
-    max-height:33%;
-    transition: max-height 0.25s ease-in;
+    max-height: 33%;
+    transition: max-height 3s ease-in;
 }
