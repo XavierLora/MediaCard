@@ -81,39 +81,62 @@ a{
     height: 90vh;
 }
 .cardRatio{
-    width: 50%;
-}
-.card{
-    aspect-ratio: 16/9;
-    border: 1px solid #fff;
-    border-radius: 15px;
-    box-shadow: 30px 30px 10px 0px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
+    width: 60%;
     position: relative;
     top: 10vh;
 }
-.cardTextContainer{
-    background-color: rgba(255, 255, 255, 0.3);
-    height: 0%;
-    position: absolute;
+.card{
+    width: 83.33%;
+    position: relative;
+    top: 2vh;
+    margin: auto;
+    aspect-ratio: 16/9;
+    border: 1px solid #ffffff22;
+    background-color: #282c34;
+    background: linear-gradient(0deg, rgba(0,0,0,0.28) 100%, rgba(0,0,0,.72) 0%);
+    box-shadow: 0 7px 20px 5px #00000088;
+    border-radius: .7rem;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(6px);
+    overflow: hidden;
+}
+.cardContents{
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    bottom: 0;
-    z-index: 3;
-}  
-iframe{
-    position: inherit;
-    z-index: 2;
-    border-radius: 15px;
-    border: none; 
-    margin: 0; 
-    padding: 0;
-    -ms-zoom: 1.25;
-    -moz-transform: scale(1.25);
-    -moz-transform-origin: center 0%;
-    -o-transform: scale(1.25);
-    -o-transform-origin: center 0%;
-    -webkit-transform: scale(1.25);
-    -webkit-transform-origin: center 0%;
+    margin: auto;
+    height: 65%;   
+    border-radius: 0.5rem;
+}
+#prePrkImg{
+    border-radius: 1rem;
+    max-width: 100%;
+    padding: 0.5vh;
+    margin: auto;
+}
+.cardTextContainer{
+    width: 100%;
+    height: 40%;
+    z-index: 10;
+    display: grid;
+    padding: 0.25vh;
+    
+    grid-template-columns: [leftEdge]3% [leftItems]45% [center] 49% [rightItems] 3% [rightEdge];
+    grid-template-rows: [top1]5%[startItem] 25% [logoContainer]50% [description] 20% [last];
+}
+.material-symbols-outlined{
+    grid-column-start: center;
+    justify-self: end;
+}
+#cardTitle{
+    font-weight: 100;
+    font-size: 150%;
+    grid-column-start: leftItems;
+    grid-column-end: center;
+    grid-row-start: startItem;
+    grid-row-end: logoContainer;
+    text-align: left;
+    align-self: center;
 }
 footer{
     position: fixed;
@@ -126,8 +149,4 @@ footer{
     font-size: 2rem;
     color: var(--grey);
 }
-
-.cardTextContainer:hover{
-    max-height: 33%;
-    transition: max-height 3s ease-in;
-}
+/*
