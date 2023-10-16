@@ -4,10 +4,7 @@
     --black: #000000;
     --grey: #B2BEB5;
     --bblue: #45b3e7;
-    --text-shadow: 0px 1.5px 0px rgba(0,0,0,0.1),
-    0px 3.5px 2.5px rgba(0,0,0,0.15),
-    0px 6px 1px rgba(0,0,0,0.1),
-    0px 8.5px 7.5px rgba(0,0,0,0.1);
+    
 }
 html { height: 100% }
 body{
@@ -84,6 +81,7 @@ a{
     width: 60%;
     position: relative;
     top: 10vh;
+    
 }
 .card{
     width: 83.33%;
@@ -94,18 +92,33 @@ a{
     border: 1px solid #ffffff22;
     background-color: #282c34;
     background: linear-gradient(0deg, rgba(0,0,0,0.28) 100%, rgba(0,0,0,.72) 0%);
-    box-shadow: 0 7px 20px 5px #00000088;
+    
     border-radius: .7rem;
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(6px);
     overflow: hidden;
+    transition: ease-in-out .3s;
+    
+    &:hover {
+      top: calc( 2%);
+      border: 1px solid rgba(#F2F4F8, 0);
+      box-shadow: 0 7px 20px 5px #00000088;
+      cursor: pointer;
+    }
+    
+    &:active {
+      top: 2%;
+      box-shadow: 0 7px 20px 5px #00000088;
+      transition: ease-in-out .1s;
+    }
+    
 }
 .cardContents{
     display: flex;
     flex-direction: column;
     width: 100%;
     margin: auto;
-    height: 65%;   
+    height: 57.5%;   
     border-radius: 0.5rem;
 }
 #prePrkImg{
@@ -119,24 +132,63 @@ a{
     height: 40%;
     z-index: 10;
     display: grid;
-    padding: 0.25vh;
-    
     grid-template-columns: [leftEdge]3% [leftItems]45% [center] 49% [rightItems] 3% [rightEdge];
-    grid-template-rows: [top1]5%[startItem] 25% [logoContainer]50% [description] 20% [last];
+    grid-template-rows: [top1]5%[startItem] 25% [logoContainer]50% [description] 15% [last] 5% [bttm];
+    transition: top ease 0.5s;
 }
-.material-symbols-outlined{
-    grid-column-start: center;
-    justify-self: end;
-}
-#cardTitle{
-    font-weight: 100;
-    font-size: 150%;
+.cardTitleFlex{
     grid-column-start: leftItems;
-    grid-column-end: center;
+    grid-column-end: rightItems;
     grid-row-start: startItem;
     grid-row-end: logoContainer;
+    display: flex;
+    flex-direction: row;
+    gap: 1vh;
+    align-items: center;
+}
+#viewButton{
+    font-size: 250%;
+    &:hover {
+        color:var(--navblue);
+        transition: ease-in-out 0.5s;
+    }
+}
+#shareButton{
+    align-self: center;
+    margin-left: auto;
+    font-size: 250%;
+    &:hover {
+        color:var(--navblue);
+        transition: ease-in-out 0.5s;
+    }
+    
+}
+#downloadButton{
+    align-self: center;
+    font-size: 250%;
+    &:hover {
+        color:var(--navblue);
+        transition: ease-in-out 0.5s;
+    }
+}
+#cardTitle{
+    font-size: 250%;
+    font-weight: 100;
     text-align: left;
     align-self: center;
+}
+.cardDescContainer{
+    grid-column-start: leftItems;
+    grid-column-end: rightItems;
+    grid-row-start: logoContainer;
+    grid-row-end: last;
+}
+h2:first-child{
+    font-weight: 100;
+    font-size: 200%;
+    text-align: left;
+    color: var(--grey);
+    margin-top: auto;
 }
 footer{
     position: fixed;
@@ -148,5 +200,53 @@ footer{
     text-align: center;
     font-size: 2rem;
     color: var(--grey);
+}
+@media screen and (max-width: 768px){
+    .navText{
+        font-size: 3rem;
+    }
+    .cardTitleFlex{
+        align-items: center;
+        gap: 0.5vh;
+    }
+    #cardTitle{
+        font-size: 150%;
+    }
+    #viewButton{
+        font-size: 125%;
+    }
+    #shareButton{
+        font-size: 125%;
+    }
+    #downloadButton{
+        font-size: 125%;
+    }
+    h2:first-child{
+        font-size: 100%;
+    }
+}
+@media screen and (max-width: 480px){
+    .navText{
+        font-size: 2.5rem;
+    }
+    .cardTitleFlex{
+        align-items: center;
+        gap: 0.5vh;
+    }
+    #cardTitle{
+        font-size: 90%;
+    }
+    #viewButton{
+        font-size: 100%;
+    }
+    #shareButton{
+        font-size: 100%;
+    }
+    #downloadButton{
+        font-size: 90%;
+    }
+    h2:first-child{
+        font-size: 60%;
+    }
 }
 /*
